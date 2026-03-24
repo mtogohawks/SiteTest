@@ -383,6 +383,242 @@ ul, ol {
   color: var(--text-muted);
 }
 
+/* --- Nav highlight (Tutorials link) --- */
+.nav-highlight {
+  color: var(--white) !important;
+  background: var(--clay);
+  padding: 0.3rem 0.9rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: background 0.15s;
+}
+
+.nav-highlight:hover {
+  background: var(--clay-dark);
+}
+
+/* --- Tutorial Page Header --- */
+.tut-page-header {
+  background: linear-gradient(135deg, var(--earth) 0%, var(--clay-dark) 100%);
+  color: var(--white);
+  padding: 2.5rem 0 2rem;
+}
+
+.tut-back-link {
+  display: inline-block;
+  color: var(--clay-light);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  transition: color 0.15s;
+}
+
+.tut-back-link:hover {
+  color: var(--white);
+}
+
+.tut-page-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.tut-page-sub {
+  color: var(--clay-light);
+  font-size: 1rem;
+}
+
+/* --- Tutorial Header (per tutorial) --- */
+.tut-header {
+  background: var(--sand);
+  border: 1px solid var(--sand-dark);
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.tut-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+}
+
+.tut-tag {
+  background: var(--clay);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.2rem 0.75rem;
+  border-radius: 50px;
+}
+
+.tut-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  color: var(--earth);
+  margin-bottom: 0.75rem;
+}
+
+.tut-desc {
+  color: var(--text-muted);
+  font-size: 1rem;
+  max-width: 700px;
+  line-height: 1.7;
+}
+
+/* --- Tutorial Steps --- */
+.tut-steps {
+  border: 1px solid var(--sand-dark);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--white);
+}
+
+.tut-step {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  border-bottom: 1px solid var(--sand-dark);
+  transition: background 0.15s;
+}
+
+.tut-step:last-child {
+  border-bottom: none;
+}
+
+.tut-step:nth-child(even) {
+  background: var(--sand);
+}
+
+.tut-step:hover {
+  background: #fdf8f3;
+}
+
+.tut-step:nth-child(even):hover {
+  background: #ede0d2;
+}
+
+.tut-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 0.75rem;
+  border-right: 1px solid var(--sand-dark);
+  background: rgba(0,0,0,0.025);
+  gap: 0.5rem;
+}
+
+.tut-visual svg {
+  width: 108px;
+  height: auto;
+  display: block;
+}
+
+.tut-caption {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  font-style: italic;
+  text-align: center;
+  margin: 0;
+}
+
+.tut-content {
+  padding: 1.75rem 2rem;
+}
+
+.tut-step-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clay);
+  margin-bottom: 0.3rem;
+}
+
+.tut-content h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--earth);
+  margin-bottom: 0.55rem;
+}
+
+.tut-content p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.tut-tip {
+  margin-top: 0.85rem;
+  background: var(--sand);
+  border-left: 3px solid var(--clay);
+  padding: 0.55rem 1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.87rem;
+  color: var(--text-muted);
+}
+
+.tut-step:nth-child(even) .tut-tip {
+  background: var(--white);
+}
+
+/* --- Tutorial Page Footer --- */
+.tut-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--sand-dark);
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border: 2px solid var(--clay);
+  color: var(--clay);
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-outline:hover {
+  background: var(--clay);
+  color: var(--white);
+}
+
+/* Tutorial page responsive */
+@media (max-width: 620px) {
+  .tut-step {
+    grid-template-columns: 1fr;
+  }
+
+  .tut-visual {
+    flex-direction: row;
+    border-right: none;
+    border-bottom: 1px solid var(--sand-dark);
+    justify-content: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .tut-visual svg {
+    width: 65px;
+  }
+
+  .tut-content {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .tut-header {
+    padding: 1.5rem;
+  }
+}
+
 /* --- Footer --- */
 .site-footer {
   background: var(--earth);
