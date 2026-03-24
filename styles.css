@@ -383,6 +383,175 @@ ul, ol {
   color: var(--text-muted);
 }
 
+/* --- Projects --- */
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--sand-dark);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.project-header {
+  background: linear-gradient(135deg, var(--earth) 0%, var(--clay-dark) 100%);
+  color: var(--white);
+  padding: 2.5rem 2.5rem 2rem;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tag {
+  background: rgba(255,255,255,0.15);
+  color: var(--sand);
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.project-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.project-desc {
+  color: var(--clay-light);
+  font-size: 1rem;
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+/* --- Tutorial Steps --- */
+.tutorial-steps {
+  padding: 0;
+}
+
+.tutorial-step {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 0;
+  border-bottom: 1px solid var(--sand-dark);
+  transition: background 0.15s;
+}
+
+.tutorial-step:last-child {
+  border-bottom: none;
+}
+
+.tutorial-step:hover {
+  background: #fdf8f4;
+}
+
+.tutorial-step:nth-child(even) {
+  background: var(--sand);
+}
+
+.tutorial-step:nth-child(even):hover {
+  background: #efe3d5;
+}
+
+.step-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  background: rgba(0,0,0,0.03);
+  border-right: 1px solid var(--sand-dark);
+  gap: 0.5rem;
+}
+
+.step-visual svg {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.visual-caption {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+.step-content {
+  padding: 1.75rem 2rem;
+}
+
+.step-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clay);
+  margin-bottom: 0.35rem;
+}
+
+.step-content h4 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--earth);
+  margin-bottom: 0.6rem;
+}
+
+.step-content p {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+.step-tip {
+  margin-top: 0.9rem;
+  background: var(--sand);
+  border-left: 3px solid var(--clay);
+  padding: 0.6rem 1rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.tutorial-step:nth-child(even) .step-tip {
+  background: var(--white);
+}
+
+@media (max-width: 640px) {
+  .tutorial-step {
+    grid-template-columns: 1fr;
+  }
+
+  .step-visual {
+    border-right: none;
+    border-bottom: 1px solid var(--sand-dark);
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+  }
+
+  .step-visual svg {
+    width: 70px;
+  }
+
+  .step-content {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .project-header {
+    padding: 1.75rem 1.5rem 1.5rem;
+  }
+}
+
 /* --- Footer --- */
 .site-footer {
   background: var(--earth);
