@@ -480,8 +480,8 @@ ul, ol {
 }
 
 .tut-step {
-  display: grid;
-  grid-template-columns: 170px 1fr;
+  display: flex;
+  flex-direction: column;
   border-bottom: 1px solid var(--sand-dark);
   transition: background 0.15s;
 }
@@ -506,17 +506,38 @@ ul, ol {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 1.5rem 0.75rem;
-  border-right: 1px solid var(--sand-dark);
-  background: rgba(0,0,0,0.025);
+  padding: 1rem 1.5rem 1.25rem;
+  border-top: 1px solid var(--sand-dark);
+  background: #fff;
   gap: 0.5rem;
 }
 
 .tut-visual svg {
-  width: 108px;
+  width: 100%;
   height: auto;
   display: block;
+}
+
+/* firing stages grid (step 10) */
+.firing-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.firing-stage {
+  border-radius: 8px;
+  padding: 12px 8px;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.firing-stage strong {
+  display: block;
+  font-size: 0.88rem;
+  margin-bottom: 4px;
+  font-weight: 600;
 }
 
 .tut-caption {
@@ -593,29 +614,24 @@ ul, ol {
 
 /* Tutorial page responsive */
 @media (max-width: 620px) {
-  .tut-step {
-    grid-template-columns: 1fr;
-  }
-
-  .tut-visual {
-    flex-direction: row;
-    border-right: none;
-    border-bottom: 1px solid var(--sand-dark);
-    justify-content: flex-start;
-    padding: 1rem 1.5rem;
-    gap: 1rem;
-  }
-
-  .tut-visual svg {
-    width: 65px;
-  }
-
   .tut-content {
     padding: 1.25rem 1.5rem;
   }
 
+  .tut-visual {
+    padding: 0.75rem 1rem 1rem;
+  }
+
   .tut-header {
     padding: 1.5rem;
+  }
+
+  .firing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .firing-grid .firing-stage:last-child {
+    grid-column: span 2;
   }
 }
 
